@@ -1,33 +1,74 @@
-<section class="card">
-  <header class="card__header">
-    <h2>Calculer avec linkedSignal</h2>
-    <button type="button" (click)="calculateTotal()">Calculer</button>
-  </header>
+<div class="container-fluid m-5">
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-6 col-lg-5 col-xl-5">
+      <div class="card shadow-sm h-100">
+        <header class="card-header bg-primary text-white d-flex justify-content-between align-items-center py-4 px-4">
+          <h2 class="mb-0 fs-5 fw-semibold">Calculer avec linkedSignal</h2>
 
-  <div class="field">
-    <label for="quantity">Quantité :</label>
-    <input
-      id="quantity"
-      type="number"
-      min="0"
-      [ngModel]="quantitySignal()"
-      (ngModelChange)="updateQuantity($event)"
-    />
-  </div>
+          <button type="button" class="btn btn-light text-primary fw-semibold" style="border-radius: 6px;"
+            (click)="calculateTotal()">
+            Calculer
+          </button>
+        </header>
 
-  <div class="field">
-    <label for="unitPrice">Prix unitaire :</label>
-    <input
-      id="unitPrice"
-      type="number"
-      min="0"
-      step="0.01"
-      [ngModel]="unitPriceSignal()"
-      (ngModelChange)="updateUnitPrice($event)"
-    />
-  </div>
+        <div class="card-body p-4">
 
-  <div class="total">
-    Total : <span>{{ formatCurrency(totalSignal()) }}</span>
+          <div class="mb-4">
+            <label for="quantity" class="form-label fw-semibold">Quantité :</label>
+            <input id="quantity" type="number" min="0" class="form-control form-control-lg" [ngModel]="quantitySignal()"
+              (ngModelChange)="updateQuantity($event)" />
+          </div>
+
+          <div class="mb-4">
+            <label for="unitPrice" class="form-label fw-semibold">Prix unitaire :</label>
+            <input id="unitPrice" type="number" min="0" step="0.01" class="form-control form-control-lg"
+              [ngModel]="unitPriceSignal()" (ngModelChange)="updateUnitPrice($event)" />
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center border-top pt-4 mt-4">
+            <span class="fs-4 fw-semibold">Total :</span>
+            <span class="fs-4 fw-bold text-primary">{{ formatCurrency(totalSignal()) }}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5 col-xl-5">
+      <div class="card shadow-sm h-100">
+        <header class="card-header bg-primary text-white d-flex justify-content-center align-items-center py-4 px-4">
+          <h2 class="mb-0 fs-5 fw-semibold">Convertisseur Euro ↔ Dollar</h2>
+        </header>
+
+        <div class="card-body p-4">
+
+          <div class="mb-4">
+            <label for="euroAmount" class="form-label fw-semibold">Euro (€) :</label>
+            <input id="euroAmount" type="number" min="0" step="0.01" class="form-control form-control-lg"
+              [ngModel]="euroAmountSignal()" (ngModelChange)="updateEuroAmount($event)" />
+          </div>
+
+          <div class="mb-4">
+            <label for="dollarAmount" class="form-label fw-semibold">Dollar ($) :</label>
+            <input id="dollarAmount" type="number" min="0" step="0.01" class="form-control form-control-lg"
+              [ngModel]="dollarAmountSignal()" (ngModelChange)="updateDollarAmount($event)" />
+          </div>
+
+          <div class="mb-4">
+            <label for="exchangeRate" class="form-label fw-semibold">Taux de change :</label>
+            <input id="exchangeRate" type="number" min="0" step="0.01" class="form-control form-control-lg"
+              [ngModel]="exchangeRateSignal()" (ngModelChange)="updateExchangeRate($event)" />
+          </div>
+
+          <div class="border-top pt-4 mt-4">
+            <div class="fw-semibold mb-2">Résultats :</div>
+            <div class="fw-bold mb-1">{{ formatCurrency(euroAmountSignal()) }} = {{ formatDollar(dollarAmountSignal())
+              }}</div>
+            <div>Taux: 1€ = {{ exchangeRateSignal().toFixed(2) }} $</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

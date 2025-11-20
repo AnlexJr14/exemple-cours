@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, effect, signal } from '@angular/core';
+import { LinkedSignals } from '../linked-signals/linked-signals';
 
 @Component({
   selector: 'app-signals',
-  imports: [CommonModule],
+  imports: [CommonModule, LinkedSignals],
   templateUrl: './signals.html',
   styleUrl: './signals.css',
 })
