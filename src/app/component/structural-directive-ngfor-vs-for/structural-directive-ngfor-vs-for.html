@@ -1,0 +1,54 @@
+<div class="row text-center">
+    <h1>Example of ngfor</h1>
+    <div class="col-12 m-3 col-lg-4 col-md-6">
+        <select class="form-select p-2">
+            <option *ngFor="let emp of employees" [value]="emp.id">
+                {{ emp.empName }} - {{ emp.empEmail }}
+            </option>
+        </select>
+    </div>
+
+    <h1>Example of for</h1>
+    <div class="col-12 m-3 col-lg-4 col-md-6">
+        <select class="form-select p-2">
+            @for(emp of employees; track emp.id) {
+                <option [value]="emp.id">
+                    {{ emp.empName }} - {{ emp.empEmail }}
+                </option>
+            }
+        </select>
+    </div>
+
+    <div class="col-12 m-3">
+        <table class="table table-hover table-striped table-bordered w-auto mx-auto">
+        <thead class="table-dark">
+            <tr>
+                <th>Employee ID</th>
+                <th>Employee Name</th>
+                <th>Employee Email</th>
+                <th>Employee Position</th>
+                <th>Employee Department</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of employees; track emp">
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.empName }}</td>
+                <td>{{ emp.empEmail }}</td>
+                <td>{{ emp.empPosition }}</td>
+                <td>{{ emp.empDepartment }}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+
+    <div class="col-4 m-1">
+        <ol>
+            <li *ngFor="let company of companyList">
+                {{ company }}
+            </li>
+        </ol>
+        <div class="d-flex justify-content-center flex-wrap py-4">
+
+    </div>
+</div>

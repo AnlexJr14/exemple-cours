@@ -1,0 +1,29 @@
+section.binding-demo {
+  max-width: 420px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section.binding-demo article,
+section.binding-demo figure {
+  margin: 16px 0;
+}
+
+section.binding-demo img {
+  border: 1px solid #000;
+  border-radius: 4px;
+}
+
+section.binding-demo input,
+section.binding-demo select,
+section.binding-demo button {
+  display: block;
+  width: 100%;
+  margin: 8px auto;
+  padding: 6px 10px;
+}
+
+section.binding-demo button {
+  width: 120px;
+}

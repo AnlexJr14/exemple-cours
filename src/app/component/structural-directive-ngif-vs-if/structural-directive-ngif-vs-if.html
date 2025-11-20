@@ -1,0 +1,50 @@
+<div class="d-flex flex-wrap justify-content-center m-4">
+    <button class="btn btn-primary m-1">Blue</button>
+    <button class="btn btn-success m-1">Green</button>
+    <button class="btn btn-warning m-1">Yellow</button>
+    <button class="btn btn-danger m-1">Red</button>
+</div>
+
+<div class="row text-center">
+    <div class="col-12 m-3"></div>
+    <h2>Example of ngif vs if</h2>
+    <div>
+        <input type="checkbox" (click)="onClick()" class="m-4"> Terms and conditions
+    </div>
+    <!-- <div *ngIf="isChecked">
+        <button class="btn btn-success">Submit</button>
+    </div> -->
+    @if(isChecked) {
+        <div>
+            <button class="btn btn-success">Submit</button>
+        </div>
+    }
+</div>
+
+<div *ngIf="isInputBox" class="d-flex flex-wrap justify-content-center col-12 m-3">
+    <input type="text" [value]="topic">
+</div>
+
+<div class="d-flex flex-wrap justify-content-center m-4">
+    <button class="btn btn-success" (click)="onShow()">Show</button>
+    <button class="btn btn-danger" (click)="onHide()">Hide</button>
+</div>
+<div class="d-flex flex-wrap justify-content-center m-4">
+    <div><input type="text" class="m-1" [(ngModel)]="input1"></div><br>
+    <div><input type="text" class="m-1" [(ngModel)]="input2"></div>
+</div>
+@if(input1 !== input2 && input1 != '' && input2 != '') {
+    <div class="d-flex flex-wrap justify-content-center m-4">
+        <p class="text-danger">C'est pas pareil</p>
+    </div>
+}
+@if(input1 == input2 && input1 != '' && input2 != '') {
+    <div class="d-flex flex-wrap justify-content-center m-4">
+        <p class="text-success">C'est pareil</p>
+    </div>
+}
+@if(input1 == '' || input2 == '') {
+    <div class="d-flex flex-wrap justify-content-center m-4">
+        <p class="text-warning">Veuillez entrer des valeurs dans les deux champs</p>
+    </div>
+}

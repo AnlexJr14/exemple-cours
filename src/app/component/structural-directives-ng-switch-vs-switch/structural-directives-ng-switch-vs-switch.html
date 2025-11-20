@@ -1,0 +1,55 @@
+<div class="col-12 d-flex flex-column align-items-center justify-content-center min-vh-100">
+    <div class="card shadow-sm p-4" style="width: 100%; max-width: 400px;">
+        <div class="card-body">
+            <label for="gradeInput" class="form-label fw-bold">Entrez votre note entre 0 et 100:</label>
+            <div class="input-group input-group-sm mb-3">
+                <input type="number" id="gradeInput" [(ngModel)]="note" class="form-control form-control-sm text-center"
+                    placeholder="0-100" min="0" max="100" style="max-width: 120px; margin: 0 auto;" />
+                <span class="input-group-text">/100</span>
+            </div>
+
+            <div class="mt-4 text-center" [ngSwitch]="getGradeCategory()">
+                <div *ngSwitchCase="'excellent'" class="alert alert-success py-2">
+                    <i class="bi bi-trophy-fill"></i> Excellent
+                </div>
+                <div *ngSwitchCase="'very good'" class="alert alert-info py-2">
+                    <i class="bi bi-star-fill"></i> Very Good
+                </div>
+                <div *ngSwitchCase="'good'" class="alert alert-primary py-2">
+                    <i class="bi bi-check-circle-fill"></i> Good
+                </div>
+                <div *ngSwitchCase="'Passable'" class="alert alert-warning py-2">
+                    <i class="bi bi-emoji-smile-fill"></i> Passable
+                </div>
+                <div *ngSwitchCase="'Recalé'" class="alert alert-danger py-2">
+                    <i class="bi bi-exclamation-triangle-fill"></i> Recalé
+                </div>
+                <div *ngSwitchDefault class="alert alert-secondary py-2">
+                    <i class="bi bi-info-circle-fill"></i> Veuillez saisir une note
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container text-center mt-4 card shadow-sm p-4" style="width: 100%; max-width: 500px;">
+        <div class="d-flex justify-content-center gap-3 mt-3">
+            <button class="btn btn-primary" (click)="showMessage('1st')"><i class="bi bi-trophy-fill"></i>1st grade</button>
+            <button class="btn btn-success" (click)="showMessage('2nd')"> <i class="bi bi-award-fill"></i>2nd grade</button>
+            <button class="btn btn-warning" (click)="showMessage('3rd')"><i class="bi bi-star-fill"></i>3rd grade</button>
+        </div>
+
+        <div class="mt-4" [ngSwitch]="selectedGrade">
+            <p *ngSwitchCase="'1st'" class="alert alert-info">
+                <i class="bi bi-trophy-fill"></i> Congratulation! You have the 1st grade
+            </p>
+            <p *ngSwitchCase="'2nd'" class="alert alert-success">
+                <i class="bi bi-award-fill"></i> Congratulation! You have the 2nd grade
+            </p>
+            <p *ngSwitchCase="'3rd'" class="alert alert-warning">
+                <i class="bi bi-star-fill"></i> Congratulation! You have the 3rd grade
+            </p>
+            <p *ngSwitchDefault class="text-secondary fs-6">
+                Clique sur un bouton pour voir le message.
+            </p>
+        </div>
+    </div>
+</div>

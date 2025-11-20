@@ -1,0 +1,33 @@
+<section class="binding-demo">
+  <h2>One way Data Binding</h2>
+
+  <article>
+    <h5>1- Text Interpolation</h5>
+    <p>{{ name }} is learning {{ topic }}</p>
+  </article>
+
+  <article>
+    <h5>2- Property Binding</h5>
+    <input type="text" [value]="topic" readonly />
+  </article>
+
+  <figure>
+    <img [src]="imageUrl" alt="Angular Logo" width="250" height="250" />
+  </figure>
+
+  <article>
+    <h5>3- Event Binding</h5>
+    <select (change)="onChange()">
+      <option value="Angular">Angular</option>
+      <option value="React">React</option>
+      <option value="VueJs">VueJs</option>
+    </select>
+    <button (click)="onSave()">Save</button>
+  </article>
+
+  <article>
+    <h2>Two way data binding</h2>
+    <input type="text" [(ngModel)]="name" />
+    <p>Your name is {{ name }}</p>
+  </article>
+</section>
