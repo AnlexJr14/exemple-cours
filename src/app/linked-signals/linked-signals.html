@@ -1,1 +1,33 @@
-<p>linked-signals works!</p>
+<section class="card">
+  <header class="card__header">
+    <h2>Calculer avec linkedSignal</h2>
+    <button type="button" (click)="calculateTotal()">Calculer</button>
+  </header>
+
+  <div class="field">
+    <label for="quantity">Quantité :</label>
+    <input
+      id="quantity"
+      type="number"
+      min="0"
+      [ngModel]="quantitySignal()"
+      (ngModelChange)="updateQuantity($event)"
+    />
+  </div>
+
+  <div class="field">
+    <label for="unitPrice">Prix unitaire :</label>
+    <input
+      id="unitPrice"
+      type="number"
+      min="0"
+      step="0.01"
+      [ngModel]="unitPriceSignal()"
+      (ngModelChange)="updateUnitPrice($event)"
+    />
+  </div>
+
+  <div class="total">
+    Total : <span>{{ formatCurrency(totalSignal()) }}</span>
+  </div>
+</section>
