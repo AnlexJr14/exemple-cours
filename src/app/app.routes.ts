@@ -4,6 +4,7 @@ import { StructuralDirectiveNgifVsIf } from './component/structural-directive-ng
 import { StructuralDirectiveNgforVsFor } from './component/structural-directive-ngfor-vs-for/structural-directive-ngfor-vs-for';
 import { StructuralDirectivesNgSwitchVsSwitch } from './component/structural-directives-ng-switch-vs-switch/structural-directives-ng-switch-vs-switch';
 import { Signals } from './signals/signals';
+import { Profil } from './profil/profil';
 
 
 export const appRoutes: Routes = [
@@ -13,6 +14,7 @@ export const appRoutes: Routes = [
   { path: 'structural-directive-ngfor-vs-for', component: StructuralDirectiveNgforVsFor },
   { path: 'structural-directives-ng-switch-vs-switch', component: StructuralDirectivesNgSwitchVsSwitch },
   {path: 'app-signals', component:Signals},
-  { path: '**', redirectTo: 'data-binding' },
+  {path: 'app-profil', component:Profil},
+  {path: '**', redirectTo: 'data-binding' },
 ];
 

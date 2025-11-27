@@ -1,0 +1,13 @@
+<div class="col-12 m-3">
+    @if(isEligible){
+    <h4 class="text-success fw-bold">Vous êtes éligible à une inscription Premium</h4>
+    } @else{
+    <h4 class="text-danger fw-bold">Vous n'êtes pas éligible à une inscription Premium</h4>
+    }
+    <ul>
+        <li>{{dumyData.id}}</li>
+        <li>{{dumyData.nom}}</li>
+        <li>{{dumyData.email}}</li>
+        <li>{{dumyData.inscription}}</li>
+    </ul>
+</div>
