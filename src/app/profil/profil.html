@@ -11,3 +11,13 @@
         <li>{{dumyData.inscription}}</li>
     </ul>
 </div>
+<div>
+    @for(data of apiData; track data.id){
+    <div class="card m-2 p-2">
+        <h5>{{ data.id}}</h5>
+        <p>{{ data.name}}</p>
+        <p>{{ data.username}}</p>
+        <p>{{ data.email}}</p>
+    </div>
+    }
+</div>
